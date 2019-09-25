@@ -67,9 +67,8 @@ public class ReportController {
     private HttpEntity<MultiValueMap> getHttpEntity(ReportQuery reportQuery) {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
-        String authorization = generateAuthorization("bsgvakbas_992", "wJJDKZy6ikfmrAsIRi+Y6Q==");
+        String authorization = generateAuthorization("usernam", "password");
         headers.add("Authorization", authorization);
-        headers.add("token", "true");
         MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
         params.add("queryDefinition", reportQuery.getQueryDefinition());
         params.add("asOf", reportQuery.getAsOf());
